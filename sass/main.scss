@@ -1,0 +1,62 @@
+@import "partials/normalize";
+@import "partials/variables";
+
+html, body {
+	font-size: 16px;
+	font-family: 'Montserrat';
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.iphone {
+	width: 800px;
+}
+
+.bg {
+	position: absolute;
+	top: 100px;
+	left: 229px;
+	width: 340px;
+	height: 558px;
+	background-image: url('../img/city.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+.splash {
+	@extend .bg;
+	// background-color: black;
+	background: linear-gradient(to bottom, rgba(116, 26, 90, 0.92) 0%, rgba(26, 18, 18, 0.95) 100%);
+
+	h1 {
+		margin-top: 230px;
+		text-align: center;
+		text-transform: uppercase;
+		color: white;
+		font-size: 1.3rem;
+		letter-spacing: 5px;
+	}
+}
+
+
+.categories {
+	@extend .bg;
+	padding-top: 50px;
+	background: none;
+	letter-spacing: 0.5px;
+	background-color: white;
+	text-align: center;
+	font-size: 0.65rem;
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30%;
+		padding: 42px 0;
+		border: 1px solid black;
+		margin-bottom: 1px;
+		border-radius: 50%;
+	}
+}
