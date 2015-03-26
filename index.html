@@ -7,6 +7,7 @@
     <link rel=stylesheet href="css/main.css"/>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300, 700' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 <body>
 	<img class="iphone" src="img/iphone-6.png">
@@ -16,20 +17,565 @@
 		<h1>Selected</h1>
 	</div>
 	<div class="categories">
+		<h1>Selected</h1><span class="profile-icon"></span>
 		<h2>Select a few categories.<br>We'll show you some cool events.</h2>
-		<a href="#" class="cat1">Funny</a>
-		<a href="#" class="cat2">Thrill</a>
-		<a href="#" class="cat3">Soulful</a>
-		<a href="#" class="cat4">Active</a>
-		<a href="#" class="cat5">Casual</a>
-		<a href="#" class="cat6">Serious</a>
-		<a href="#" class="cat7">Outdoor</a>
-		<a href="#" class="cat8">Learn</a>
-		<a href="#" class="cat9">Artsy</a>
-		<a href="#" class="cat10">Music</a>
-		<a href="#" class="cat11">Food</a>
-		<a href="#" class="cat12">Drink</a>
+		<a href="#" class="cat cat1"><span>Funny</span></a>
+		<a href="#" class="cat cat2"><span>Thrill</span></a>
+		<a href="#" class="cat cat3"><span>Soulful</span></a>
+		<a href="#" class="cat cat4"><span>Active</span></a>
+		<a href="#" class="cat cat5 "><span>Casual</span></a>
+		<a href="#" class="cat cat6"><span>Serious</span></a>
+		<a href="#" class="cat cat7"><span>Outdoor</span></a>
+		<a href="#" class="cat cat8"><span>Learn</span></a>
+		<a href="#" class="cat cat9"><span>Artsy</span></a>
+		<a href="#" class="cat cat10"><span>Music</span></a>
+		<a href="#" class="cat cat11"><span>Food</span></a>
+		<a href="#" class="cat cat12"><span>Drink</span></a>
+		<div><a href="#" class="go-button"><span>Go</span></a></div>
 	</div>
+	<div class="list">
+		<div class="selected-bar">
+			<h2>Selected</h2>
+			<a href="#" class="back-to-cat"></a>
+			<a href="#" class="filter"></a>
+		</div>
+		<div class="scroll-view">
+			<div class="event event2">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Active</span><span class="tag">Outdoor</span><span class="tag">Learn</span>
+					<h3>Nature Lover's Yoga</h3>
+					<p class="description">Lynn Valley Yoga (North Van)<span>TOMORROW 3PM</span></p>
+				</div>
+			</div>
+			<div class="event event3">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Active</span><span class="tag">Outdoor</span><span class="tag">Learn</span>
+					<h3>Workout Mashup: Running and Cycling Bootcamp</h3>
+					<p class="description">Hybrid Physique (Kitsilano)<span>SAT 2PM</span></p>
+				</div>
+			</div>
+			<div class="event event1">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Artsy</span><span class="tag">Learn</span><span class="tag">Outdoor</span>
+					<h3>Get Creative: Outdoor Painting Workshop at Stanley Park</h3>
+					<p class="description">One Canvas (West End)<span>SUN 9AM</span></p>
+				</div>
+			</div>
+			<div class="event event4">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Artsy</span><span class="tag">Learn</span><span class="tag">Outdoor</span>
+					<h3>Street Art Tour: Murals of Van City</h3>	
+					<p class="description">Warm Hut Cafe (Downtown)<span>SAT 11AM</span></p>
+				</div>
+			</div>
+			<div class="event event5">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Outdoor</span><span class="tag">Learn</span><span class="tag">Active</span>
+					<h3>Yoga Lessons With A View</h3>
+					<p class="description">True Yoga (Burnaby Moutain)<span>SAT 8AM</span></p>
+				</div>
+			</div>
+			<div class="event event6">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Food</span><span class="tag">Learn</span><span class="tag">Casual</span>
+					<h3>Sushi Class: Rolls &amp; Nigiri</h3>
+					<p class="description">Meal Cozy (Yaletown)<span>TOMORROW 6PM</span></p>
+				</div>
+			</div>
+			<div class="event event7">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Learn</span><span class="tag">Soulful</span><span class="tag">Casual</span>
+					<h3>Passion 101: Find &amp; Live Your Passions</h3>
+					<p class="description">The Well-Lived Co-op (West End)<span>TODAY 6PM</span></p>
+				</div>
+			</div>
+			<div class="event event8">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Drink</span><span class="tag">Learn</span><span class="tag">Casual</span>
+					<h3>The Art of Cocktails: Understanding Spirits</h3>	
+					<p class="description">Deviled Eggvocate (Downtown)<span>SAT 7:30PM</span></p>
+				</div>
+			</div>				
+		</div>
+	</div>
+	<div class="details">
+		<div class="event-img">
+			<span class="back-to-list"></span>
+		</div>
+		<div class="event-details">
+			<h3>Sushi Class: Rolls &amp; Nigiri</h3>
+			<h4>@ Meal Cozy</h4>
+			<p class="card happening">
+				<span>Roll Your Own Delicacy</span><br>
+				Join Chef Joshua for a lesson in the basics of making your own rolls and nigiri. Learn to make simple rolls as well as some specialties, including a few of the chef's own creations like the Big Boss Roll and the Fraser Roll.
+			</p>
+			<p class="card why-joing">
+				<span>Learn from the Best</span><br>
+				Learn how to handed pick a selection of fish based on what's available at the market. Hands on experience with the Chef to teaches you how to best prepare each fish. Learn to simply cut fish for nigiri and how to set up beautiful plates. Plus, try some classic Japanese appetizers. Select a handy kit for making sushi and pick up the addtional incredients right at the shop.</p>
+			<p class="card specialty">
+				<span>BYOB</span><br>
+				Bring wine, beer, or sake to share with the class and sip to go along with the rolls.
+			</p>
+			<section class="key-facts">
+				<p>6pm, Friday, March 27</p>
+				<p>$59 / person</p>
+				<p>Limited Spots</p>
+				<a href="#">Visit Website</a>				
+				<a href="#">Share Event</a>
+			</section>
+			<section class="card map">
+				<p>
+					540 Beatty Street, Vancouver, BC
+					<span class="helper">Tap on address to copy it. Tap on map to lauch directions.</span>
+				</p>
+				<div class="map-view">			
+				</div>
+			</section>
+			<section class="card additional-info">
+				<article>
+					<span>Sign up for more!</span>
+					Get a curated list of cool happenings delivered to your inbox every week.
+					<a href="#">Subscribe</a>
+				</article>
+				<article>
+					<span>Feedback &amp; Suggestions?</span>
+					We'd love to hear from you. Shoot us an email and let us know what you think.
+					<a href="#">Email</a>
+				</article>
+			</section>
+		</div>
+		<a href="#" class="book-now">Book Now</a>
+	</div>
+	<div class="payment">
+		<div class="event-img">
+			<span class="back-to-list"></span>
+		</div>
+		<div class="event-details">
+			<h3>Sushi Class: Rolls &amp; Nigiri</h3>
+			<h4>@ Meal Cozy</h4>
+			<div class="card happening">
+				<span>Sushi Making Class</span><br>
+				<span class="payment-heading">Includes</span>
+				<p> Ingredients, Instructions, Lots of Fun</p>
+				<span class="payment-heading">Bring</span>
+				<p>Clean Hands, Eager Heart, (optionally) Beer / Sake / Wine</p>
+				<span class="payment-heading">Number of Tickets</span>
+				<p class="important-info">2<span class="tix plus-tix">+</span><span class="tix minus-tix">-</span></p>
+				<section class="money">
+					<span class="payment-heading">Amount</span>
+					<p>$118  + </p>
+				</section>
+				<section class="money">
+					<span class="payment-heading">Tax</span>
+					<p>$17.7</p>
+				</section>
+				<section class="money">
+					<span class="payment-heading">Total</span>
+					<p class="important-info">$135.7</p>
+				</section>
+			</div>
+			<section class="key-facts">
+				<p>6pm, Friday, March 27</p>
+				<p>540 Beatty St., Vancouver, BC</p>
+			</section>
+		<!-- 	<section class="card additional-info">
+				<article>
+					<span>Sign up for more!</span>
+					Get a curated list of cool happenings delivered to your inbox every week.
+					<a href="#">Subscribe</a>
+				</article>
+				<article>
+					<span>Feedback &amp; Suggestions?</span>
+					We'd love to hear from you. Shoot us an email and let us know what you think.
+					<a href="#">Email</a>
+				</article>
+			</section> -->
+		</div>
+		<a href="#" class="book-now">Pay</a>
+
+		<div class="add-card">
+			<h3>Add a Credit Card</h3>
+			<div class="input empty"></div>
+			<div class="input completed"></div>
+			<div class="keypad"></div>
+		</div>
+	</div>
+	<div class="confirmation">
+		<h3>Payment successful.</h3>
+		<p>The receipt and event details have been sent to your email cjkal91@gmail.com.</p>
+		<div class="ticket-info"></div>
+		<p>You can access the tickets anytime from the tickets section in your profile.</p>
+		<a href="#" class="show-my-tix">Take me to the tickets</a>
+		<span class="back-button">Back to event &amp; search results</span>
+	</div>
+	<div class="profile">
+		<div class="selected-bar1">
+			<h2>Selected</h2>
+			<a href="#" class="back-to-cat"></a>
+			<a href="#" class="filter"></a>
+		</div>
+		<section class="bio">
+			<div class="bio-pic"></div>
+			<div class="name">Christine L.</div>
+			<div class="location">Vancouver, BC</div>
+		</section>
+		<div class="links">
+			<a href="#" class="ticket">My Tickets</a>
+			<a href="#" class="books">Bookmarks</a>
+			<a href="#" class="past-events">Past Events</a>
+		</div>
+		<section class="friends circle">
+			<div class="following">Following</div>
+			<div class="followers">Followers</div>
+		</section>
+		<section class="admin circle">
+			<div class="settings">Settings</div>
+			<div class="logout">Log Out</div>
+		</section>
+	</div>
+	<div class="tickets">
+		<div class="selected-bar">
+			<h2>My Tickets</h2>
+			<a href="#" class="back-to-cat"></a>
+			<a href="#" class="filter"></a>
+		</div>
+		<div class="scroll-view">
+			<div class="event event2">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Active</span><span class="tag">Outdoor</span><span class="tag">Learn</span>
+					<h3>Nature Lover's Yoga</h3>
+					<p class="description">Lynn Valley Yoga (North Van)<span>TOMORROW 3PM</span></p>
+				</div>
+			</div>
+			<div class="event event6">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Food</span><span class="tag">Learn</span><span class="tag">Casual</span>
+					<h3>Sushi Class: Rolls &amp; Nigiri</h3>
+					<p class="description">Meal Cozy (Yaletown)<span>TOMORROW 6PM</span></p>
+				</div>
+			</div>				
+		</div>
+	</div>
+	<div class="bookmarks">
+		<div class="selected-bar">
+			<h2>Bookmarks</h2>
+			<a href="#" class="back-to-cat"></a>
+			<a href="#" class="filter"></a>
+		</div>
+		<div class="scroll-view">
+			<div class="event event3">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Active</span><span class="tag">Outdoor</span><span class="tag">Learn</span>
+					<h3>Workout Mashup: Running and Cycling Bootcamp</h3>
+					<p class="description">Hybrid Physique (Kitsilano)<span>SAT 2PM</span></p>
+				</div>
+			</div>
+			<div class="event event1">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Artsy</span><span class="tag">Learn</span><span class="tag">Outdoor</span>
+					<h3>Get Creative: Outdoor Painting Workshop at Stanley Park</h3>
+					<p class="description">One Canvas (West End)<span>SUN 9AM</span></p>
+				</div>
+			</div>
+			<div class="event event4">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Artsy</span><span class="tag">Learn</span><span class="tag">Outdoor</span>
+					<h3>Street Art Tour: Murals of Van City</h3>	
+					<p class="description">Warm Hut Cafe (Downtown)<span>SAT 11AM</span></p>
+				</div>
+			</div>
+			<div class="event event5">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Outdoor</span><span class="tag">Learn</span><span class="tag">Active</span>
+					<h3>Yoga Lessons With A View</h3>
+					<p class="description">True Yoga (Burnaby Moutain)<span>SAT 8AM</span></p>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<div class="past">
+		<div class="selected-bar">
+			<h2>Past Events</h2>
+			<a href="#" class="back-to-cat"></a>
+			<a href="#" class="filter"></a>
+		</div>
+		<div class="scroll-view">
+			<div class="event event8">
+				<span class="bookmark"></span>
+				<div class="snippet">
+					<span class="tag">Drink</span><span class="tag">Learn</span><span class="tag">Casual</span>
+					<h3>The Art of Cocktails: Understanding Spirits</h3>	
+					<p class="description">Deviled Eggvocate (Downtown)<span>SAT 7:30PM</span></p>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<div class="ticket-details">
+		<div class="event-img">
+			<span class="back-to-list"></span>
+		</div>
+		<div class="event-details">
+			<h3>Sushi Class: Rolls &amp; Nigiri</h3>
+			<h4>@ Meal Cozy</h4>
+			<div class="card happening">
+				<span>Sushi Making Class</span><br>
+				<span class="payment-heading">Includes</span>
+				<p> Ingredients, Instructions, Lots of Fun</p>
+				<span class="payment-heading">Bring</span>
+				<p>Clean Hands, Eager Heart, (optionally) Beer / Sake / Wine</p>
+				<span class="payment-heading">Number of Tickets</span>
+				<p class="important-info">2</p>
+				<!-- <section class="money">
+					<span class="payment-heading">Amount</span>
+					<p>$118  + </p>
+				</section>
+				<section class="money">
+					<span class="payment-heading">Tax</span>
+					<p>$17.7</p>
+				</section>
+				<section class="money">
+					<span class="payment-heading">Paid</span>
+					<p class="important-info">$135.7</p>
+				</section> -->
+			</div>
+			<section class="key-facts">
+				<p>6pm, Friday, March 27</p>
+			</section>
+			<section class="card map">
+				<p>
+					540 Beatty Street, Vancouver, BC
+					<span class="helper">Tap on address to copy it. Tap on map to lauch directions.</span>
+				</p>
+				<div class="map-view">			
+				</div>
+			</section>
+
+			<section class="key-facts ticket-info">
+				<span>Ticket 1</span>
+				<p>Order #: 258348050</p>
+				<p>Please show barcode or QR code at the door.</p>
+				<div class="ticket-view">
+					<div class="barcode"></div>			
+					<div class="qrcode"></div>
+					<a class="share-this">Send this Ticket</a>
+				</div>
+				<span>Ticket 2</span>
+				<p>Order #: 258348051</p>
+				<p>Please show barcode or QR code at the door.</p>
+				<div class="ticket-view">
+					<div class="barcode"></div>			
+					<div class="qrcode"></div>
+					<a class="share-this">Send this Ticket</a>			
+				</div>
+			</section>	
+			</div>
+	</div>
+	<div class="filtered">
+		<section class="price">
+			<h3>Preferred Price</h3>
+			<div class="free selected">Free</div>
+			<div class="under35 selected">Under $35</div>
+			<div class="morethan35">$35+</div>
+		</section>
+		<section class="time">
+			<h3>Happening</h3>
+			<div class="within3">Within 3 hours</div>
+			<div class="within24">Within 24 hours</div>
+			<div class="within72 selected">Within 72 hours</div>
+		</section>
+		<section class="location">
+			<h3>Distance</h3>
+			<div class="km1">Within 1km</div>
+			<div class="km5">Within 5km</div>
+			<div class="km20 selected">Within 20km</div>
+		</section>
+		<a href="#" class="filter-button">Filter</a>
+	</div>
+	<script type="text/javascript">
+		// $('.selected-bar').hide();
+		// $('.book-now').hide();
+		// $('.selected-bar1').hide();
+		$('.filtered, .ticket-details, .past, .bookmarks, .tickets, .profile, .confirmation, .payment, .details, .list, .categories, .add-card, .completed').hide();
+
+		$('.splash h1').hide().fadeIn(1500, function(){
+			$('.categories h1').animate({marginTop: "-=30"});
+			$('.categories').fadeIn(900);
+		});
+
+		$('.filter').click(function(){
+			$('.filtered').toggle('slide', { direction: 'right' }, 300);
+		});
+
+		$('.filter-button').click(function(){
+			$('.filtered').toggle('slide', { direction: 'right' }, 300);
+		})
+
+		$('.profile-icon').click(function(){
+			$('.profile').toggle('slide', { direction: 'right' }, 300);
+		});
+
+		$('.profile .back-to-cat').click(function(){
+			$('.profile').toggle('slide', { direction: 'right' }, 300);
+			$('.list').hide();
+			$('.categories').show();
+			$('.categories h1, .categories .profile-icon').show();
+		});
+
+		$('.profile .ticket').click(function(){
+			$('.tickets').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar').show();
+			$('.selected-bar1').hide();
+		});
+
+		$('.tickets .back-to-cat').click(function(){
+			$('.tickets').toggle('slide', { direction: 'right' }, 300);
+			$('.profile').show();
+			$('.selected-bar1').show();
+		});
+
+		$('.profile .books').click(function(){
+			$('.bookmarks').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar1').hide();
+		});
+
+		$('.bookmarks .back-to-cat').click(function(){
+			$('.bookmarks').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar1').show();
+		});
+
+		$('.profile .past-events').click(function(){
+			$('.past').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar1').hide();
+		});
+
+		$('.past .back-to-cat').click(function(){
+			$('.past').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar1').show();
+		});
+
+		$('.cat').click(function(){
+			if($(this).hasClass('selected')){
+				$(this).removeClass('selected');
+			}else{
+				$(this).addClass('selected');
+			};
+		});
+
+		$('.go-button').click(function(){
+			$('.categories h1, .categories .profile-icon').fadeOut();
+			$('.list').toggle('slide', { direction: 'right' }, 300);
+			$('.list .selected-bar').show();
+		});
+
+		$('.list .back-to-cat').click(function(){
+			$('.list').toggle('slide', { direction: 'right' }, 300);
+			$('.categories h1, .categories .profile-icon').fadeIn();
+			$('.selected-bar').show();
+		});
+
+		$('.filtered section div').click(function(){
+			if($(this).hasClass('selected')) {
+				$(this).removeClass('selected');
+			}else {
+				$(this).addClass('selected');
+			}
+		});
+
+		$('.event .bookmark').click(function(e){
+			e.stopPropagation();
+			if($(this).hasClass("bSelected")){
+				$(this).css({
+					backgroundImage: "url('img/bookmark.png')"
+				}).removeClass("bSelected");
+			} else {
+				$(this).css({
+					backgroundImage: "url('img/bookmark-selected.png')"
+				}).addClass("bSelected");
+			}
+		});
+
+		$('.list .event').click(function(){
+			$('.list .selected-bar').fadeOut();
+			$('.details').toggle('slide', { direction: 'right' }, 300);
+			$('.book-now').show();
+		});
+
+		$('.details .event-img').click(function(){
+			$('.details').toggle('slide', { direction: 'right' }, 300);
+			$('.list').show();
+			$('.list .selected-bar').fadeIn();
+		});
+
+		$('.details .book-now').click(function(){
+			$('.payment').toggle('slide', { direction: 'right' }, 300);
+			$('.payment .book-now').removeClass('ready2pay');
+
+			$(this).fadeOut();
+			$('.completed').hide();
+			$('.add-card').hide();
+		});
+		$('.payment .event-img').click(function(){
+			$('.payment').toggle('slide', { direction: 'right' }, 300);
+			$('.details .book-now').fadeIn();
+			$('.payment .book-now').fadeIn();
+			$('.payment .book-now').removeClass('ready2pay');
+		});
+
+		$('.payment .book-now').click(function(){
+			if($(this).hasClass('ready2pay')){
+				$('.confirmation').fadeIn();
+				$(this).fadeOut();
+			} else {
+				$('.add-card').fadeIn();
+				$('.empty').fadeIn();
+				$('.completed').fadeOut();
+				$('.keypad').fadeIn();
+				$(this).fadeOut();
+				$('.payment').animate({
+	  				scrollTop: $('.payment')[0].scrollHeight}, 2000, function(){
+	  					$('.payment .book-now').addClass('ready2pay');
+	  				});
+			}
+		});
+
+		$('.empty, .keypad').click(function(){
+			$('.empty').hide();
+			$('.keypad').fadeOut();
+			$('.completed').fadeIn();
+			$('.payment .book-now').addClass('ready2pay').fadeIn();;
+		});
+
+		$('.show-my-tix').click(function(){
+			$('.confirmation').fadeOut();
+			$('.ticket-details').toggle('slide', { direction: 'right' }, 300);
+		});
+
+		$('.ticket-details .event-img').click(function(){
+			$('.ticket-details').toggle('slide', { direction: 'right' }, 300);
+			$('.tickets').show();
+			$('.payment, .details').hide();
+			$('.tickets .selected-bar').show();
+		});
+
+		$('.tickets .event6').click(function(){
+			$('.ticket-details').toggle('slide', { direction: 'right' }, 300);
+			$('.selected-bar').hide();
+		});
+	</script>
 </body>
 </html>
 

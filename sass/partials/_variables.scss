@@ -1,0 +1,42 @@
+
+$width: 340px;
+$height: 558px;
+$offset-top: 100px;
+$offset-left: 229px;
+
+$theme-dark-purple: rgb(25,9,59);
+$theme-gray: rgb(168, 186, 184);
+$theme-light-gray: rgb(235, 232, 238);
+$theme-purple: rgb(236, 41, 143);
+$theme-orange: rgb(241, 144, 32);
+
+$gray: rgb(170, 160, 150);
+$button-red: rgb(217, 30, 24);
+$bg-color: $theme-dark-purple;
+
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Light.ttf");
+    font-style: 200;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Hairline.ttf");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Black.ttf");
+    font-weight: 900;
+}
+

@@ -1,5 +1,13 @@
 @import "partials/normalize";
 @import "partials/variables";
+@iimprt compass;
+
+
+/******************************************************************************
+
+								Base
+
+******************************************************************************/
 
 html, body {
 	font-size: 16px;
@@ -17,20 +25,25 @@ html, body {
 
 .bg {
 	position: absolute;
-	top: 100px;
-	left: 229px;
-	width: 340px;
-	height: 558px;
-	background-image: url('../img/city.jpg');
+	top: $offset-top;
+	left: $offset-left;
+	width: $width;
+	height: $height;
+	background-image: url('../img/nyc.png');
 	background-position: center;
 	background-size: cover;
 }
 
+/******************************************************************************
+
+								Splash
+
+******************************************************************************/
+
 .splash {
 	@extend .bg;
 	// background-color: black;
-	background: linear-gradient(to bottom, rgba(116, 26, 90, 0.92) 0%, rgba(26, 18, 18, 0.95) 100%);
-
+	background: linear-gradient(to bottom, rgba(25, 8, 59, 0.42) 0%, $bg-color 100%);
 	h1 {
 		margin-top: 230px;
 		text-align: center;
@@ -41,22 +54,892 @@ html, body {
 	}
 }
 
+/******************************************************************************
+
+								Categories
+
+******************************************************************************/
+
 
 .categories {
 	@extend .bg;
 	padding-top: 50px;
 	background: none;
 	letter-spacing: 0.5px;
-	background-color: white;
+	background-color: $bg-color;
 	text-align: center;
-	font-size: 0.65rem;
+	.profile-icon {
+		position: absolute;
+		top: 18px;
+		left: 290px;
+		width: 35px;
+		height: 35px;
+		background-image: url('../img/profile-icon.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	h1 {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+	h2 {
+		font-size: 0.9rem;
+		color: white;
+		font-weight: 200;
+	}
 	a {
+		text-decoration: none;
+	}
+	a.cat {
+		position:relative;
+		color: white;
+		font-size: 0.75rem;
 		display: inline-block;
 		vertical-align: middle;
-		width: 30%;
-		padding: 42px 0;
-		border: 1px solid black;
-		margin-bottom: 1px;
+		width: 24%;
+		padding: 31px 0;
+		border: 2px solid white;
+		margin: 10px 6px 0 0;
 		border-radius: 50%;
+		font-weight: normal;
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+	}
+	a.selected {
+		background-color: white;
+		font-weight: 700;
+		color: $bg-color;
+	}
+	a.selected:before {
+		background-image: none;
+	}
+
+	.go-button {
+		display: inline-block;
+		height: 3rem;
+		background-color: $button-red;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		color: white;
+		padding-top: 0.8rem;
+		text-transform: uppercase;
+		font-size: 1.3rem;
+		letter-spacing: 2px;
 	}
 }
+
+.cat1:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/group-friends.png');
+	background-size: cover;
+	background-position: center center;
+	border-radius: 50%;
+	opacity: 0.2;
+}
+
+.cat2:before {
+	@extend .cat1:before;
+	background-image: url('../img/thrill.jpg');
+}
+.cat3:before {
+	@extend .cat1:before;
+	background-image: url('../img/soulful.png');
+}
+.cat4:before {
+	@extend .cat1:before;
+	background-image: url('../img/active.png');
+}
+.cat5:before {
+	@extend .cat1:before;
+	background-image: url('../img/casual.png');
+}
+.cat6:before {
+	@extend .cat1:before;
+	background-image: url('../img/serious.jpg');
+}
+.cat7:before {
+	@extend .cat1:before;
+	background-image: url('../img/outdoor.jpg');
+}
+.cat8:before {
+	@extend .cat1:before;
+	background-image: url('../img/study.jpg');
+}
+.cat9:before {
+	@extend .cat1:before;
+	background-image: url('../img/artsy.jpg');
+}
+.cat10:before {
+	@extend .cat1:before;
+	background-image: url('../img/music.png');
+}
+.cat11:before {
+	@extend .cat1:before;
+	background-image: url('../img/food.png');
+}
+.cat12:before {
+	@extend .cat1:before;
+	background-image: url('../img/drink.jpg');
+}
+
+/******************************************************************************
+
+								List
+
+******************************************************************************/
+
+.list {
+	@extend .bg;
+	background: $bg-color;
+	overflow: scroll;
+	margin-top: 54px;
+	height: $height - 54px;
+
+	.selected-bar {
+		position: fixed;
+		top: $offset-top;
+		// left: $width;
+		z-index: 100;
+
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			color: $theme-light-gray;
+			font-size: 1rem;
+			letter-spacing: 5px; 
+			font-weight: normal;
+			padding-top: 5px;
+			margin-left: 110px;
+		}
+		.back-to-cat {
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 12px;
+			width: 31px;
+			height: 31px;
+			background-image: url('../img/back-to-cat.png');
+			background-size: contain;
+			background-position: center;
+		}
+		.filter {
+			@extend .back-to-cat;
+			left: $width - 36px;
+			background-image: url('../img/filter.png');
+		}
+	}
+	.event {
+		height: 238px;
+		background-image: url('../img/stanley-park.png');
+		background-size: cover;
+		background-position: center;
+		color: white;
+		position: relative;
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 85px;
+			top: 0;
+			left: 0;
+			background: linear-gradient(to bottom, rgba(10, 10, 10, 0.52) 0%, rgba(10, 10, 10, 0) 100%)
+		}
+
+
+		.bookmark {
+			position: absolute;
+			// background-color: red;
+			top: 0.8rem;
+			right: 0.7rem;
+			width: 30px;
+			height: 30px;
+			display: block;
+			background-image: url('../img/bookmark.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.snippet {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding-bottom: 20px;
+			padding-top: 35px;
+			background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.78) 70%);
+		}
+
+		h3 {
+			margin: 0;
+			padding: 0.6rem 0.7rem 0.5rem 0.7rem;
+			font-weight: 200;
+			letter-spacing: 1px;
+			font-size: 1rem;
+			text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.6);
+		}
+		p {
+			margin: 0;
+			padding: 0 0.7rem;
+			font-size: 0.7rem;
+			font-weight: 100;
+			span {
+				display: inline-block;
+				float: right;
+			}
+		}
+
+		.tag {
+			// display: none;
+			margin-top: 2rem;
+			font-size: 7px;
+			font-weight: 700;
+			padding: 2px 6px;
+			color: black;
+			background-color: rgba($theme-orange, 0.97);
+			margin-right: 0.3rem;
+			text-transform: uppercase;
+			border-radius: 10px;
+
+			&:first-of-type {
+				margin-left: 0.7rem;
+			}
+		}
+	}
+
+	.event1 {
+		background-image: url('../img/stanley-park.png');
+	}
+	.event2 {
+		background-image: url('../img/nature-yoga.jpg');
+	}
+	.event3 {
+		background-image: url('../img/workout.jpg');
+	}
+	.event4 {
+		background-image: url('../img/street-art.jpg');
+	}
+	.event5 {
+		background-image: url('../img/yoga-outdoor.jpg');
+	}
+	.event6 {
+		background-image: url('../img/sushi.jpg');
+	}
+	.event7 {
+		background-image: url('../img/passion.jpg');
+	}
+	.event8 {
+		background-image: url('../img/spirits.jpg');
+	}
+}
+
+/******************************************************************************
+
+								Base
+
+******************************************************************************/
+
+.details {
+	@extend .bg;
+	background-image: none;
+	background-color: white;
+	overflow: scroll;
+	.event-img {
+		height: 140px;
+		width: 100%;
+		background-image: url('../img/sushi.jpg');
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50px;
+			background-color: white;
+			background: linear-gradient(to left, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.58) 60%);
+		}
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 45px;
+			background-image: url('../img/back-to-cat.png');
+			background-size: 80%;
+			background-repeat: no-repeat;
+			background-position: center;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	h3, h4 {
+		margin-top: 1.5rem;
+		text-align: center;
+		font-weight: 400;
+		margin-bottom: 0;
+		font-size: 1.3rem;
+	}
+
+	h4 {
+		margin-top: 0.3rem;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: gray;
+		margin-bottom: 1.5rem;
+	}
+
+	.card {
+		font-weight: 200;
+		font-size: 0.8rem;
+		color: #555;
+		padding: 1.5rem 1.5rem 0;
+		margin: 0;
+		background-color: $theme-light-gray;
+		line-height: 1.05rem;
+		span {
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 1px;
+			display: block;
+			margin-bottom: -0.7rem;
+			font-size: 0.8rem;
+		}
+	}
+
+	.specialty, .addtional-info {
+		padding-bottom: 1.5rem;
+	}
+
+	.key-facts {
+		text-align: center;
+		padding: 0.8rem 0 1.4rem;
+		color: #333;
+		font-weight: 400;
+		p {
+			margin: 7px 0;
+		}
+		a {
+			display: inline-block;
+			margin-top: 0.8rem;
+			font-size: 0.8rem;
+			text-decoration: none;
+			font-weight: 200;
+			padding: 0.8rem;
+			margin-right: 0.7rem;
+			border: 1px solid $theme-purple;
+			border-radius: 3px;
+		}
+	}
+
+	.map {
+		padding: 0;
+		p {
+			padding: 1.5rem;
+			margin: 0;
+		}
+		.helper {
+			text-transform: none;
+			font-weight: 200;
+			font-style: italic;
+			color: #777;
+			font-size: 0.6rem;
+			letter-spacing: 0;
+			margin-top: 3px;
+		}
+		.map-view {
+			width: 100%;
+			height: 160px;
+			background-image: url('../img/map.png');
+			background-size: 130%;
+			background-position: center;
+		}
+	}
+	.additional-info {
+		padding-bottom: 1.5rem;
+		margin-bottom: 54px;
+		article {
+			font-size: 0.65rem;
+			width: 48%;
+			
+			display: inline-block;
+			vertical-align: top;
+			&:first-of-type {
+				margin-right: 2%;
+			}
+			a {
+				color: $theme-purple;
+				text-decoration: none;
+				font-weight: 400;
+				// margin-top: 0.45rem;
+				// display: inline-block;
+				// border: 1px solid $theme-purple;
+				// border-radius: 3px;
+				// padding: 0.4rem 0.7rem;
+			}
+			span {
+				font-size: 0.7;
+				font-weight: 400;
+				margin: 0;
+				margin-bottom: 0.2rem;
+			}
+		}
+	}
+
+	.book-now {
+		position: fixed;
+		left: $offset-left;
+		top: $height + $offset-top - 54;
+		width: $width;
+		height: 54px;
+		text-decoration: none;
+		padding-top: 17px;
+		background-color: $theme-dark-purple;
+		color: white;
+		text-align: center;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		font-weight: 400;
+		z-index: 1000;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+/******************************************************************************
+
+								Payment
+
+******************************************************************************/
+
+.payment {
+	@extend .details;
+	.card {
+		padding-bottom: 0.2rem;
+	}
+	.event-details {
+		.payment-heading {
+			font-size: 0.6rem;
+		}
+
+		section.money {
+			display: inline-block;
+			width: 20%;
+			&:last-of-type {
+				float: right;
+				margin-top: -0.2rem;
+				margin-right: 0.5rem;
+				.important-info {
+					margin-top: 0.8rem;
+				}
+				.payment-heading {
+					text-align: right;
+				}
+			}
+		}
+
+		.tix {
+			margin-top: -0.5rem;
+			margin-left: 0.4rem;
+			font-size: 1.4rem;
+			font-weight: 300;
+			padding: 3px 6px;
+			border: 2px solid #777;
+			border-radius: 50%;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.minus-tix {
+			padding: 3px 7px;
+		}
+
+		.important-info {
+			font-size: 1.4rem;
+			font-weight: 400;
+			span {
+				float: right;
+			}
+		}
+	}
+
+	.key-facts {
+		margin-bottom: 54px !important;
+	}
+}
+
+.add-card {
+	height: $height - 30;
+	position: relative;
+	h3 {
+		margin: 0 1.5rem;
+		// border-bottom: 1px solid #555;
+		// padding-bottom: 1rem;
+	}
+
+	.empty {
+		// display: none;
+		margin-top: 1rem;
+		width: 320;
+		height: 180px;
+		// background-color: blue;
+		background-image: url("../img/enter-num.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.completed {
+		@extend .empty;
+		background-image: url('../img/entered-num.png');
+		// display: none;
+	}
+
+}
+
+	.keypad {
+		width: 100%;
+		height: 238px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-image: url('../img/keypad.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+/******************************************************************************
+
+								Confirmation
+
+******************************************************************************/
+
+.confirmation {
+	@extend .bg;
+	background-image: url('../img/confirmation-blur.png');
+	color: $theme-light-gray;
+	font-weight: 200;
+	font-size: 0.8rem;
+	padding: 1.5rem;
+	letter-spacing: 0.5px;
+
+	.back-button {
+		margin-top: 4rem;
+		display: block;
+		width: 145px;
+		padding-left: 35px;
+		height: 30px;
+		background-image: url('../img/back-to-cat.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	h3 {
+		font-size: 2rem;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 400;
+		padding: 1rem 1.2rem;
+		border: 2px solid $theme-light-gray;
+		color: $theme-light-gray;
+		margin-top: 1rem;
+		display: inline-block;
+		border-radius: 5px;
+	}
+}
+
+
+/******************************************************************************
+
+								Profile
+
+******************************************************************************/
+
+.profile {
+	@extend .bg;
+	background-image: none;
+	background-color: $theme-dark-purple;
+	font-size: 0.9rem;
+	.selected-bar1 {
+		position: fixed;
+		top: $offset-top;
+		// left: $width;
+		z-index: 100;
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			color: $theme-light-gray;
+			font-size: 1rem;
+			letter-spacing: 5px; 
+			font-weight: normal;
+			padding-top: 5px;
+			margin-left: 110px;
+		}
+		.back-to-cat {
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 12px;
+			width: 31px;
+			height: 31px;
+			background-image: url('../img/back-to-cat.png');
+			background-size: contain;
+			background-position: center;
+		}
+		.filter {
+			display: none;
+			@extend .back-to-cat;
+			left: $width - 36px;
+			background-image: url('../img/filter.png');
+		}
+	}
+
+	.bio, .links {
+		margin-top: 4rem;
+		display: inline-block;
+		width: 37%;
+		vertical-align: top;
+	}
+
+	.bio {
+		margin-left: 2.5rem;
+	}
+
+	.bio-pic {
+		width:100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 2px solid $theme-light-gray;
+		background-image: url('../img/profile.png');
+		background-size: contain;
+		margin-bottom: 0.6rem;
+	}
+
+	.name, .location {
+		text-align: center;
+		margin-left: -1.2rem;
+		color: $theme-light-gray;
+		font-weight: 200;
+		opacity: 0.92;
+	}
+
+	.links {
+		margin-top: 3.8rem;
+		width: 42%;
+		text-align: center;
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+			font-weight: 200;
+			display: block;
+			margin-bottom: 1rem;
+			padding: 9px 10px;
+			border: 2px solid $theme-light-gray;
+			border-radius: 6px;
+			color: $theme-light-gray;
+		}
+	}
+
+	.circle {
+		margin-left: 3.6rem;
+		margin-top: 1.5rem;
+		div {
+			display: inline-block;
+			margin-right: 0.8rem;
+			text-align: center;
+			color: $theme-light-gray;
+			width: 37%;
+			padding: 40px 0;
+			border: 2px solid $theme-light-gray;
+			border-radius: 50%;
+		}
+
+	}
+
+}
+
+
+/******************************************************************************
+
+								Tickets
+
+******************************************************************************/
+
+.tickets {
+	@extend .list;
+	.selected-bar h2 {
+		margin-left: 100px !important;
+	}
+}
+
+.bookmarks {
+	@extend .list;
+	.bookmark {
+		background-image: url('../img/bookmark-selected.png') !important;
+	}
+	.selected-bar h2 {
+		margin-left: 95px !important;
+	}
+}
+
+.past {
+	@extend .list;
+	.selected-bar h2 {
+		margin-left: 90px !important;
+	}
+}
+
+.ticket-details {
+	@extend .payment;
+	.key-facts {
+		margin-bottom: 0 !important;
+	}
+
+	.map {
+		margin-bottom: 2rem;
+	}
+	.ticket-info {
+		span {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 0.8rem;
+			color: #777;
+			font-weight: 200;
+			margin: 0.4rem;;
+		}
+	}
+	.barcode {
+		height: 100px;
+		width: 100%;
+		background-image: url('../img/barcode.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-bottom: 0.2rem;
+	}
+
+	.qrcode {
+		@extend .barcode;
+		margin-bottom: 0;
+		height: 145px;
+		background-image: url('../img/qr.png');
+	}
+
+	.share-this {
+		margin-bottom: 3rem;
+		color: $theme-purple;
+	}
+}
+
+
+/******************************************************************************
+
+								Filter
+
+******************************************************************************/
+
+.filtered {
+	z-index: 1000;
+	position: fixed;
+	top: $offset-top;
+	left: $offset-left + 70;
+	width: $width - 70;
+	background-color: $theme-dark-purple;
+	height: $height;
+	color: $theme-gray;
+	padding: 1.5rem;
+	section {
+		font-size: 0.7rem;
+		font-weight: 300;
+		h3 {
+			font-weight: 300;
+			font-size: 1.1rem;
+			margin-bottom: 1rem;
+			color: $theme-light-gray;
+		}
+		div {
+			width: 100%;
+			padding: 8px 0;
+			border: 1px solid $theme-gray;
+			text-align: center;
+			margin-top: -1px;
+			margin-left: -4px;
+			cursor: pointer;
+		}
+		div.selected {
+			background-color: rgba($theme-orange, 0.8);
+			color: white;
+		}
+
+	}
+	.price {
+		div {
+			display: inline-block;
+			width: 33%;
+			text-align: center;
+			padding: 8px 2px;;
+		}
+	}
+	.filter-button {
+		width: 100%;
+		margin-left: -4px;
+		background-color: $button-red;
+		display: inline-block;
+		color: White;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px 0;
+		text-decoration: none;
+		letter-spacing: 1px;
+		margin-top: 3rem;
+	}
+}
+

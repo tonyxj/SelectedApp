@@ -436,40 +436,80 @@ th {
   padding: 0;
 }
 
-/* line 4, ../sass/main.scss */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf");
+  font-style: 200;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Hairline.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.ttf");
+  font-weight: 900;
+}
+
+@iimprt compass;
+/******************************************************************************
+
+								Base
+
+******************************************************************************/
+/* line 12, ../sass/main.scss */
 html, body {
   font-size: 16px;
   font-family: 'Montserrat';
   box-sizing: border-box;
 }
 
-/* line 10, ../sass/main.scss */
+/* line 18, ../sass/main.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 14, ../sass/main.scss */
+/* line 22, ../sass/main.scss */
 .iphone {
   width: 800px;
 }
 
-/* line 18, ../sass/main.scss */
-.bg, .splash, .categories {
+/* line 26, ../sass/main.scss */
+.bg, .splash, .categories, .list, .tickets, .bookmarks, .past, .details, .payment, .ticket-details, .confirmation, .profile {
   position: absolute;
   top: 100px;
   left: 229px;
   width: 340px;
   height: 558px;
-  background-image: url("../img/city.jpg");
+  background-image: url("../img/nyc.png");
   background-position: center;
   background-size: cover;
 }
 
-/* line 29, ../sass/main.scss */
+/******************************************************************************
+
+								Splash
+
+******************************************************************************/
+/* line 43, ../sass/main.scss */
 .splash {
-  background: linear-gradient(to bottom, rgba(116, 26, 90, 0.92) 0%, rgba(26, 18, 18, 0.95) 100%);
+  background: linear-gradient(to bottom, rgba(25, 8, 59, 0.42) 0%, #19093b 100%);
 }
-/* line 34, ../sass/main.scss */
+/* line 47, ../sass/main.scss */
 .splash h1 {
   margin-top: 230px;
   text-align: center;
@@ -479,22 +519,918 @@ html, body {
   letter-spacing: 5px;
 }
 
-/* line 45, ../sass/main.scss */
+/******************************************************************************
+
+								Categories
+
+******************************************************************************/
+/* line 64, ../sass/main.scss */
 .categories {
   padding-top: 50px;
   background: none;
   letter-spacing: 0.5px;
-  background-color: white;
+  background-color: #19093b;
   text-align: center;
-  font-size: 0.65rem;
 }
-/* line 53, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
+.categories .profile-icon {
+  position: absolute;
+  top: 18px;
+  left: 290px;
+  width: 35px;
+  height: 35px;
+  background-image: url("../img/profile-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 81, ../sass/main.scss */
+.categories .profile-icon:hover {
+  cursor: pointer;
+}
+/* line 85, ../sass/main.scss */
+.categories h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+/* line 92, ../sass/main.scss */
+.categories h2 {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 200;
+}
+/* line 97, ../sass/main.scss */
 .categories a {
+  text-decoration: none;
+}
+/* line 100, ../sass/main.scss */
+.categories a.cat {
+  position: relative;
+  color: white;
+  font-size: 0.75rem;
   display: inline-block;
   vertical-align: middle;
-  width: 30%;
-  padding: 42px 0;
-  border: 1px solid black;
-  margin-bottom: 1px;
+  width: 24%;
+  padding: 31px 0;
+  border: 2px solid white;
+  margin: 10px 6px 0 0;
   border-radius: 50%;
+  font-weight: normal;
+}
+/* line 112, ../sass/main.scss */
+.categories a.cat:nth-of-type(3n) {
+  margin-right: 0;
+}
+/* line 116, ../sass/main.scss */
+.categories a.selected {
+  background-color: white;
+  font-weight: 700;
+  color: #19093b;
+}
+/* line 121, ../sass/main.scss */
+.categories a.selected:before {
+  background-image: none;
+}
+/* line 125, ../sass/main.scss */
+.categories .go-button {
+  display: inline-block;
+  height: 3rem;
+  background-color: #d91e18;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding-top: 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+/* line 141, ../sass/main.scss */
+.cat1:before, .cat2:before, .cat3:before, .cat4:before, .cat5:before, .cat6:before, .cat7:before, .cat8:before, .cat9:before, .cat10:before, .cat11:before, .cat12:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/group-friends.png");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+/* line 156, ../sass/main.scss */
+.cat2:before {
+  background-image: url("../img/thrill.jpg");
+}
+
+/* line 160, ../sass/main.scss */
+.cat3:before {
+  background-image: url("../img/soulful.png");
+}
+
+/* line 164, ../sass/main.scss */
+.cat4:before {
+  background-image: url("../img/active.png");
+}
+
+/* line 168, ../sass/main.scss */
+.cat5:before {
+  background-image: url("../img/casual.png");
+}
+
+/* line 172, ../sass/main.scss */
+.cat6:before {
+  background-image: url("../img/serious.jpg");
+}
+
+/* line 176, ../sass/main.scss */
+.cat7:before {
+  background-image: url("../img/outdoor.jpg");
+}
+
+/* line 180, ../sass/main.scss */
+.cat8:before {
+  background-image: url("../img/study.jpg");
+}
+
+/* line 184, ../sass/main.scss */
+.cat9:before {
+  background-image: url("../img/artsy.jpg");
+}
+
+/* line 188, ../sass/main.scss */
+.cat10:before {
+  background-image: url("../img/music.png");
+}
+
+/* line 192, ../sass/main.scss */
+.cat11:before {
+  background-image: url("../img/food.png");
+}
+
+/* line 196, ../sass/main.scss */
+.cat12:before {
+  background-image: url("../img/drink.jpg");
+}
+
+/******************************************************************************
+
+								List
+
+******************************************************************************/
+/* line 207, ../sass/main.scss */
+.list, .tickets, .bookmarks, .past {
+  background: #19093b;
+  overflow: scroll;
+  margin-top: 54px;
+  height: 504px;
+}
+/* line 214, ../sass/main.scss */
+.list .selected-bar, .tickets .selected-bar, .bookmarks .selected-bar, .past .selected-bar {
+  position: fixed;
+  top: 100px;
+  z-index: 100;
+}
+/* line 220, ../sass/main.scss */
+.list .selected-bar h2, .tickets .selected-bar h2, .bookmarks .selected-bar h2, .past .selected-bar h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ebe8ee;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  font-weight: normal;
+  padding-top: 5px;
+  margin-left: 110px;
+}
+/* line 230, ../sass/main.scss */
+.list .selected-bar .back-to-cat, .tickets .selected-bar .back-to-cat, .bookmarks .selected-bar .back-to-cat, .past .selected-bar .back-to-cat, .list .selected-bar .filter, .tickets .selected-bar .filter, .bookmarks .selected-bar .filter, .past .selected-bar .filter {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 31px;
+  height: 31px;
+  background-image: url("../img/back-to-cat.png");
+  background-size: contain;
+  background-position: center;
+}
+/* line 241, ../sass/main.scss */
+.list .selected-bar .filter, .tickets .selected-bar .filter, .bookmarks .selected-bar .filter, .past .selected-bar .filter {
+  left: 304px;
+  background-image: url("../img/filter.png");
+}
+/* line 247, ../sass/main.scss */
+.list .event, .tickets .event, .bookmarks .event, .past .event {
+  height: 238px;
+  background-image: url("../img/stanley-park.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+/* line 254, ../sass/main.scss */
+.list .event:hover, .tickets .event:hover, .bookmarks .event:hover, .past .event:hover {
+  cursor: pointer;
+}
+/* line 258, ../sass/main.scss */
+.list .event:before, .tickets .event:before, .bookmarks .event:before, .past .event:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 85px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.52) 0%, rgba(10, 10, 10, 0) 100%);
+}
+/* line 269, ../sass/main.scss */
+.list .event .bookmark, .tickets .event .bookmark, .bookmarks .event .bookmark, .past .event .bookmark {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.7rem;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url("../img/bookmark.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 280, ../sass/main.scss */
+.list .event .bookmark:hover, .tickets .event .bookmark:hover, .bookmarks .event .bookmark:hover, .past .event .bookmark:hover {
+  cursor: pointer;
+}
+/* line 285, ../sass/main.scss */
+.list .event .snippet, .tickets .event .snippet, .bookmarks .event .snippet, .past .event .snippet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 20px;
+  padding-top: 35px;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.78) 70%);
+}
+/* line 295, ../sass/main.scss */
+.list .event h3, .tickets .event h3, .bookmarks .event h3, .past .event h3 {
+  margin: 0;
+  padding: 0.6rem 0.7rem 0.5rem 0.7rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.6);
+}
+/* line 303, ../sass/main.scss */
+.list .event p, .tickets .event p, .bookmarks .event p, .past .event p {
+  margin: 0;
+  padding: 0 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 100;
+}
+/* line 308, ../sass/main.scss */
+.list .event p span, .tickets .event p span, .bookmarks .event p span, .past .event p span {
+  display: inline-block;
+  float: right;
+}
+/* line 314, ../sass/main.scss */
+.list .event .tag, .tickets .event .tag, .bookmarks .event .tag, .past .event .tag {
+  margin-top: 2rem;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 2px 6px;
+  color: black;
+  background-color: rgba(241, 144, 32, 0.97);
+  margin-right: 0.3rem;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+/* line 326, ../sass/main.scss */
+.list .event .tag:first-of-type, .tickets .event .tag:first-of-type, .bookmarks .event .tag:first-of-type, .past .event .tag:first-of-type {
+  margin-left: 0.7rem;
+}
+/* line 332, ../sass/main.scss */
+.list .event1, .tickets .event1, .bookmarks .event1, .past .event1 {
+  background-image: url("../img/stanley-park.png");
+}
+/* line 335, ../sass/main.scss */
+.list .event2, .tickets .event2, .bookmarks .event2, .past .event2 {
+  background-image: url("../img/nature-yoga.jpg");
+}
+/* line 338, ../sass/main.scss */
+.list .event3, .tickets .event3, .bookmarks .event3, .past .event3 {
+  background-image: url("../img/workout.jpg");
+}
+/* line 341, ../sass/main.scss */
+.list .event4, .tickets .event4, .bookmarks .event4, .past .event4 {
+  background-image: url("../img/street-art.jpg");
+}
+/* line 344, ../sass/main.scss */
+.list .event5, .tickets .event5, .bookmarks .event5, .past .event5 {
+  background-image: url("../img/yoga-outdoor.jpg");
+}
+/* line 347, ../sass/main.scss */
+.list .event6, .tickets .event6, .bookmarks .event6, .past .event6 {
+  background-image: url("../img/sushi.jpg");
+}
+/* line 350, ../sass/main.scss */
+.list .event7, .tickets .event7, .bookmarks .event7, .past .event7 {
+  background-image: url("../img/passion.jpg");
+}
+/* line 353, ../sass/main.scss */
+.list .event8, .tickets .event8, .bookmarks .event8, .past .event8 {
+  background-image: url("../img/spirits.jpg");
+}
+
+/******************************************************************************
+
+								Base
+
+******************************************************************************/
+/* line 364, ../sass/main.scss */
+.details, .payment, .ticket-details {
+  background-image: none;
+  background-color: white;
+  overflow: scroll;
+}
+/* line 369, ../sass/main.scss */
+.details .event-img, .payment .event-img, .ticket-details .event-img {
+  height: 140px;
+  width: 100%;
+  background-image: url("../img/sushi.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+/* line 376, ../sass/main.scss */
+.details .event-img:before, .payment .event-img:before, .ticket-details .event-img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: white;
+  background: linear-gradient(to left, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.58) 60%);
+}
+/* line 386, ../sass/main.scss */
+.details .event-img span, .payment .event-img span, .ticket-details .event-img span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  background-image: url("../img/back-to-cat.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 396, ../sass/main.scss */
+.details .event-img span:hover, .payment .event-img span:hover, .ticket-details .event-img span:hover {
+  cursor: pointer;
+}
+/* line 402, ../sass/main.scss */
+.details h3, .payment h3, .ticket-details h3, .details h4, .payment h4, .ticket-details h4 {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+/* line 410, ../sass/main.scss */
+.details h4, .payment h4, .ticket-details h4 {
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: gray;
+  margin-bottom: 1.5rem;
+}
+/* line 419, ../sass/main.scss */
+.details .card, .payment .card, .ticket-details .card {
+  font-weight: 200;
+  font-size: 0.8rem;
+  color: #555;
+  padding: 1.5rem 1.5rem 0;
+  margin: 0;
+  background-color: #ebe8ee;
+  line-height: 1.05rem;
+}
+/* line 427, ../sass/main.scss */
+.details .card span, .payment .card span, .ticket-details .card span {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: -0.7rem;
+  font-size: 0.8rem;
+}
+/* line 437, ../sass/main.scss */
+.details .specialty, .payment .specialty, .ticket-details .specialty, .details .addtional-info, .payment .addtional-info, .ticket-details .addtional-info {
+  padding-bottom: 1.5rem;
+}
+/* line 441, ../sass/main.scss */
+.details .key-facts, .payment .key-facts, .ticket-details .key-facts {
+  text-align: center;
+  padding: 0.8rem 0 1.4rem;
+  color: #333;
+  font-weight: 400;
+}
+/* line 446, ../sass/main.scss */
+.details .key-facts p, .payment .key-facts p, .ticket-details .key-facts p {
+  margin: 7px 0;
+}
+/* line 449, ../sass/main.scss */
+.details .key-facts a, .payment .key-facts a, .ticket-details .key-facts a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-weight: 200;
+  padding: 0.8rem;
+  margin-right: 0.7rem;
+  border: 1px solid #ec298f;
+  border-radius: 3px;
+}
+/* line 462, ../sass/main.scss */
+.details .map, .payment .map, .ticket-details .map {
+  padding: 0;
+}
+/* line 464, ../sass/main.scss */
+.details .map p, .payment .map p, .ticket-details .map p {
+  padding: 1.5rem;
+  margin: 0;
+}
+/* line 468, ../sass/main.scss */
+.details .map .helper, .payment .map .helper, .ticket-details .map .helper {
+  text-transform: none;
+  font-weight: 200;
+  font-style: italic;
+  color: #777;
+  font-size: 0.6rem;
+  letter-spacing: 0;
+  margin-top: 3px;
+}
+/* line 477, ../sass/main.scss */
+.details .map .map-view, .payment .map .map-view, .ticket-details .map .map-view {
+  width: 100%;
+  height: 160px;
+  background-image: url("../img/map.png");
+  background-size: 130%;
+  background-position: center;
+}
+/* line 485, ../sass/main.scss */
+.details .additional-info, .payment .additional-info, .ticket-details .additional-info {
+  padding-bottom: 1.5rem;
+  margin-bottom: 54px;
+}
+/* line 488, ../sass/main.scss */
+.details .additional-info article, .payment .additional-info article, .ticket-details .additional-info article {
+  font-size: 0.65rem;
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 494, ../sass/main.scss */
+.details .additional-info article:first-of-type, .payment .additional-info article:first-of-type, .ticket-details .additional-info article:first-of-type {
+  margin-right: 2%;
+}
+/* line 497, ../sass/main.scss */
+.details .additional-info article a, .payment .additional-info article a, .ticket-details .additional-info article a {
+  color: #ec298f;
+  text-decoration: none;
+  font-weight: 400;
+}
+/* line 507, ../sass/main.scss */
+.details .additional-info article span, .payment .additional-info article span, .ticket-details .additional-info article span {
+  font-size: 0.7;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+/* line 516, ../sass/main.scss */
+.details .book-now, .payment .book-now, .ticket-details .book-now {
+  position: fixed;
+  left: 229px;
+  top: 604px;
+  width: 340px;
+  height: 54px;
+  text-decoration: none;
+  padding-top: 17px;
+  background-color: #19093b;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 1000;
+}
+/* line 531, ../sass/main.scss */
+.details .book-now:hover, .payment .book-now:hover, .ticket-details .book-now:hover {
+  cursor: pointer;
+}
+
+/******************************************************************************
+
+								Payment
+
+******************************************************************************/
+/* line 545, ../sass/main.scss */
+.payment .card, .ticket-details .card {
+  padding-bottom: 0.2rem;
+}
+/* line 549, ../sass/main.scss */
+.payment .event-details .payment-heading, .ticket-details .event-details .payment-heading {
+  font-size: 0.6rem;
+}
+/* line 553, ../sass/main.scss */
+.payment .event-details section.money, .ticket-details .event-details section.money {
+  display: inline-block;
+  width: 20%;
+}
+/* line 556, ../sass/main.scss */
+.payment .event-details section.money:last-of-type, .ticket-details .event-details section.money:last-of-type {
+  float: right;
+  margin-top: -0.2rem;
+  margin-right: 0.5rem;
+}
+/* line 560, ../sass/main.scss */
+.payment .event-details section.money:last-of-type .important-info, .ticket-details .event-details section.money:last-of-type .important-info {
+  margin-top: 0.8rem;
+}
+/* line 563, ../sass/main.scss */
+.payment .event-details section.money:last-of-type .payment-heading, .ticket-details .event-details section.money:last-of-type .payment-heading {
+  text-align: right;
+}
+/* line 569, ../sass/main.scss */
+.payment .event-details .tix, .ticket-details .event-details .tix {
+  margin-top: -0.5rem;
+  margin-left: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding: 3px 6px;
+  border: 2px solid #777;
+  border-radius: 50%;
+}
+/* line 577, ../sass/main.scss */
+.payment .event-details .tix:hover, .ticket-details .event-details .tix:hover {
+  cursor: pointer;
+}
+/* line 582, ../sass/main.scss */
+.payment .event-details .minus-tix, .ticket-details .event-details .minus-tix {
+  padding: 3px 7px;
+}
+/* line 586, ../sass/main.scss */
+.payment .event-details .important-info, .ticket-details .event-details .important-info {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+/* line 589, ../sass/main.scss */
+.payment .event-details .important-info span, .ticket-details .event-details .important-info span {
+  float: right;
+}
+/* line 595, ../sass/main.scss */
+.payment .key-facts, .ticket-details .key-facts {
+  margin-bottom: 54px !important;
+}
+
+/* line 600, ../sass/main.scss */
+.add-card {
+  height: 528px;
+  position: relative;
+}
+/* line 603, ../sass/main.scss */
+.add-card h3 {
+  margin: 0 1.5rem;
+}
+/* line 609, ../sass/main.scss */
+.add-card .empty, .add-card .completed {
+  margin-top: 1rem;
+  width: 320;
+  height: 180px;
+  background-image: url("../img/enter-num.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 620, ../sass/main.scss */
+.add-card .empty:hover, .add-card .completed:hover {
+  cursor: pointer;
+}
+/* line 625, ../sass/main.scss */
+.add-card .completed {
+  background-image: url("../img/entered-num.png");
+}
+
+/* line 633, ../sass/main.scss */
+.keypad {
+  width: 100%;
+  height: 238px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("../img/keypad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+/* line 643, ../sass/main.scss */
+.keypad:hover {
+  cursor: pointer;
+}
+
+/******************************************************************************
+
+								Confirmation
+
+******************************************************************************/
+/* line 654, ../sass/main.scss */
+.confirmation {
+  background-image: url("../img/confirmation-blur.png");
+  color: #ebe8ee;
+  font-weight: 200;
+  font-size: 0.8rem;
+  padding: 1.5rem;
+  letter-spacing: 0.5px;
+}
+/* line 663, ../sass/main.scss */
+.confirmation .back-button {
+  margin-top: 4rem;
+  display: block;
+  width: 145px;
+  padding-left: 35px;
+  height: 30px;
+  background-image: url("../img/back-to-cat.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+/* line 673, ../sass/main.scss */
+.confirmation .back-button:hover {
+  cursor: pointer;
+}
+/* line 677, ../sass/main.scss */
+.confirmation h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+/* line 683, ../sass/main.scss */
+.confirmation a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 1rem 1.2rem;
+  border: 2px solid #ebe8ee;
+  color: #ebe8ee;
+  margin-top: 1rem;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/******************************************************************************
+
+								Profile
+
+******************************************************************************/
+/* line 703, ../sass/main.scss */
+.profile {
+  background-image: none;
+  background-color: #19093b;
+  font-size: 0.9rem;
+}
+/* line 708, ../sass/main.scss */
+.profile .selected-bar1 {
+  position: fixed;
+  top: 100px;
+  z-index: 100;
+}
+/* line 713, ../sass/main.scss */
+.profile .selected-bar1 h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ebe8ee;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  font-weight: normal;
+  padding-top: 5px;
+  margin-left: 110px;
+}
+/* line 723, ../sass/main.scss */
+.profile .selected-bar1 .back-to-cat, .profile .selected-bar1 .filter {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 31px;
+  height: 31px;
+  background-image: url("../img/back-to-cat.png");
+  background-size: contain;
+  background-position: center;
+}
+/* line 734, ../sass/main.scss */
+.profile .selected-bar1 .filter {
+  display: none;
+  left: 304px;
+  background-image: url("../img/filter.png");
+}
+/* line 742, ../sass/main.scss */
+.profile .bio, .profile .links {
+  margin-top: 4rem;
+  display: inline-block;
+  width: 37%;
+  vertical-align: top;
+}
+/* line 749, ../sass/main.scss */
+.profile .bio {
+  margin-left: 2.5rem;
+}
+/* line 753, ../sass/main.scss */
+.profile .bio-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ebe8ee;
+  background-image: url("../img/profile.png");
+  background-size: contain;
+  margin-bottom: 0.6rem;
+}
+/* line 763, ../sass/main.scss */
+.profile .name, .profile .location {
+  text-align: center;
+  margin-left: -1.2rem;
+  color: #ebe8ee;
+  font-weight: 200;
+  opacity: 0.92;
+}
+/* line 771, ../sass/main.scss */
+.profile .links {
+  margin-top: 3.8rem;
+  width: 42%;
+  text-align: center;
+}
+/* line 775, ../sass/main.scss */
+.profile .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 200;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 9px 10px;
+  border: 2px solid #ebe8ee;
+  border-radius: 6px;
+  color: #ebe8ee;
+}
+/* line 789, ../sass/main.scss */
+.profile .circle {
+  margin-left: 3.6rem;
+  margin-top: 1.5rem;
+}
+/* line 792, ../sass/main.scss */
+.profile .circle div {
+  display: inline-block;
+  margin-right: 0.8rem;
+  text-align: center;
+  color: #ebe8ee;
+  width: 37%;
+  padding: 40px 0;
+  border: 2px solid #ebe8ee;
+  border-radius: 50%;
+}
+
+/******************************************************************************
+
+								Tickets
+
+******************************************************************************/
+/* line 816, ../sass/main.scss */
+.tickets .selected-bar h2 {
+  margin-left: 100px !important;
+}
+
+/* line 823, ../sass/main.scss */
+.bookmarks .bookmark {
+  background-image: url("../img/bookmark-selected.png") !important;
+}
+/* line 826, ../sass/main.scss */
+.bookmarks .selected-bar h2 {
+  margin-left: 95px !important;
+}
+
+/* line 833, ../sass/main.scss */
+.past .selected-bar h2 {
+  margin-left: 90px !important;
+}
+
+/* line 840, ../sass/main.scss */
+.ticket-details .key-facts {
+  margin-bottom: 0 !important;
+}
+/* line 844, ../sass/main.scss */
+.ticket-details .map {
+  margin-bottom: 2rem;
+}
+/* line 848, ../sass/main.scss */
+.ticket-details .ticket-info span {
+  font-size: 1.5rem;
+}
+/* line 851, ../sass/main.scss */
+.ticket-details .ticket-info p {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 200;
+  margin: 0.4rem;
+}
+/* line 858, ../sass/main.scss */
+.ticket-details .barcode, .ticket-details .qrcode {
+  height: 100px;
+  width: 100%;
+  background-image: url("../img/barcode.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 0.2rem;
+}
+/* line 868, ../sass/main.scss */
+.ticket-details .qrcode {
+  margin-bottom: 0;
+  height: 145px;
+  background-image: url("../img/qr.png");
+}
+/* line 875, ../sass/main.scss */
+.ticket-details .share-this {
+  margin-bottom: 3rem;
+  color: #ec298f;
+}
+
+/******************************************************************************
+
+								Filter
+
+******************************************************************************/
+/* line 888, ../sass/main.scss */
+.filtered {
+  z-index: 1000;
+  position: fixed;
+  top: 100px;
+  left: 299px;
+  width: 270px;
+  background-color: #19093b;
+  height: 558px;
+  color: #a8bab8;
+  padding: 1.5rem;
+}
+/* line 898, ../sass/main.scss */
+.filtered section {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+/* line 901, ../sass/main.scss */
+.filtered section h3 {
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ebe8ee;
+}
+/* line 907, ../sass/main.scss */
+.filtered section div {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid #a8bab8;
+  text-align: center;
+  margin-top: -1px;
+  margin-left: -4px;
+  cursor: pointer;
+}
+/* line 916, ../sass/main.scss */
+.filtered section div.selected {
+  background-color: rgba(241, 144, 32, 0.8);
+  color: white;
+}
+/* line 923, ../sass/main.scss */
+.filtered .price div {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  padding: 8px 2px;
+}
+/* line 930, ../sass/main.scss */
+.filtered .filter-button {
+  width: 100%;
+  margin-left: -4px;
+  background-color: #d91e18;
+  display: inline-block;
+  color: White;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin-top: 3rem;
 }
