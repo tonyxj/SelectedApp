@@ -437,7 +437,7 @@
 
 		$('.profile .ticket').click(function(){
 			$('.tickets').toggle('slide', { direction: 'right' }, 300);
-			$('.selected-bar').show();
+			$('tickets .selected-bar').show();
 			$('.selected-bar1').hide();
 		});
 
@@ -450,6 +450,7 @@
 		$('.profile .books').click(function(){
 			$('.bookmarks').toggle('slide', { direction: 'right' }, 300);
 			$('.selected-bar1').hide();
+			$('.profile .selected-bar').show();
 		});
 
 		$('.bookmarks .back-to-cat').click(function(){
@@ -460,6 +461,7 @@
 		$('.profile .past-events').click(function(){
 			$('.past').toggle('slide', { direction: 'right' }, 300);
 			$('.selected-bar1').hide();
+			$('.post .selected-bar').show();
 		});
 
 		$('.past .back-to-cat').click(function(){
