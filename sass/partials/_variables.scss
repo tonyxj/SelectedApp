@@ -11,7 +11,8 @@ $theme-purple: rgb(236, 41, 143);
 $theme-orange: rgb(241, 144, 32);
 
 $gray: rgb(170, 160, 150);
-$button-red: rgb(217, 30, 24);
+// $button-red: rgb(217, 30, 24);
+$button-red: $theme-purple;
 $bg-color: $theme-dark-purple;
 
 

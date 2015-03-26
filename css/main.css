@@ -598,7 +598,7 @@ html, body {
 .categories .go-button {
   display: inline-block;
   height: 3rem;
-  background-color: #d91e18;
+  background-color: #ec298f;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -606,7 +606,7 @@ html, body {
   color: white;
   padding-top: 0.8rem;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
 }
 
@@ -955,17 +955,18 @@ html, body {
   margin-right: 0.7rem;
   border: 1px solid #ec298f;
   border-radius: 3px;
+  color: #ec298f;
 }
-/* line 462, ../sass/main.scss */
+/* line 463, ../sass/main.scss */
 .details .map, .payment .map, .ticket-details .map {
   padding: 0;
 }
-/* line 464, ../sass/main.scss */
+/* line 465, ../sass/main.scss */
 .details .map p, .payment .map p, .ticket-details .map p {
   padding: 1.5rem;
   margin: 0;
 }
-/* line 468, ../sass/main.scss */
+/* line 469, ../sass/main.scss */
 .details .map .helper, .payment .map .helper, .ticket-details .map .helper {
   text-transform: none;
   font-weight: 200;
@@ -975,7 +976,7 @@ html, body {
   letter-spacing: 0;
   margin-top: 3px;
 }
-/* line 477, ../sass/main.scss */
+/* line 478, ../sass/main.scss */
 .details .map .map-view, .payment .map .map-view, .ticket-details .map .map-view {
   width: 100%;
   height: 160px;
@@ -983,36 +984,36 @@ html, body {
   background-size: 130%;
   background-position: center;
 }
-/* line 485, ../sass/main.scss */
+/* line 486, ../sass/main.scss */
 .details .additional-info, .payment .additional-info, .ticket-details .additional-info {
   padding-bottom: 1.5rem;
   margin-bottom: 54px;
 }
-/* line 488, ../sass/main.scss */
+/* line 489, ../sass/main.scss */
 .details .additional-info article, .payment .additional-info article, .ticket-details .additional-info article {
   font-size: 0.65rem;
   width: 48%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 494, ../sass/main.scss */
+/* line 495, ../sass/main.scss */
 .details .additional-info article:first-of-type, .payment .additional-info article:first-of-type, .ticket-details .additional-info article:first-of-type {
   margin-right: 2%;
 }
-/* line 497, ../sass/main.scss */
+/* line 498, ../sass/main.scss */
 .details .additional-info article a, .payment .additional-info article a, .ticket-details .additional-info article a {
   color: #ec298f;
   text-decoration: none;
   font-weight: 400;
 }
-/* line 507, ../sass/main.scss */
+/* line 508, ../sass/main.scss */
 .details .additional-info article span, .payment .additional-info article span, .ticket-details .additional-info article span {
   font-size: 0.7;
   font-weight: 400;
   margin: 0;
   margin-bottom: 0.2rem;
 }
-/* line 516, ../sass/main.scss */
+/* line 517, ../sass/main.scss */
 .details .book-now, .payment .book-now, .ticket-details .book-now {
   position: fixed;
   left: 229px;
@@ -1021,7 +1022,7 @@ html, body {
   height: 54px;
   text-decoration: none;
   padding-top: 17px;
-  background-color: #19093b;
+  background-color: #ec298f;
   color: white;
   text-align: center;
   letter-spacing: 3px;
@@ -1029,7 +1030,7 @@ html, body {
   font-weight: 400;
   z-index: 1000;
 }
-/* line 531, ../sass/main.scss */
+/* line 532, ../sass/main.scss */
 .details .book-now:hover, .payment .book-now:hover, .ticket-details .book-now:hover {
   cursor: pointer;
 }
@@ -1039,75 +1040,76 @@ html, body {
 								Payment
 
 ******************************************************************************/
-/* line 545, ../sass/main.scss */
+/* line 546, ../sass/main.scss */
 .payment .card, .ticket-details .card {
   padding-bottom: 0.2rem;
 }
-/* line 549, ../sass/main.scss */
+/* line 550, ../sass/main.scss */
 .payment .event-details .payment-heading, .ticket-details .event-details .payment-heading {
   font-size: 0.6rem;
 }
-/* line 553, ../sass/main.scss */
+/* line 554, ../sass/main.scss */
 .payment .event-details section.money, .ticket-details .event-details section.money {
   display: inline-block;
   width: 20%;
 }
-/* line 556, ../sass/main.scss */
+/* line 557, ../sass/main.scss */
 .payment .event-details section.money:last-of-type, .ticket-details .event-details section.money:last-of-type {
   float: right;
   margin-top: -0.2rem;
   margin-right: 0.5rem;
 }
-/* line 560, ../sass/main.scss */
+/* line 561, ../sass/main.scss */
 .payment .event-details section.money:last-of-type .important-info, .ticket-details .event-details section.money:last-of-type .important-info {
   margin-top: 0.8rem;
 }
-/* line 563, ../sass/main.scss */
+/* line 564, ../sass/main.scss */
 .payment .event-details section.money:last-of-type .payment-heading, .ticket-details .event-details section.money:last-of-type .payment-heading {
   text-align: right;
 }
-/* line 569, ../sass/main.scss */
+/* line 570, ../sass/main.scss */
 .payment .event-details .tix, .ticket-details .event-details .tix {
   margin-top: -0.5rem;
   margin-left: 0.4rem;
   font-size: 1.4rem;
   font-weight: 300;
   padding: 3px 6px;
-  border: 2px solid #777;
+  color: #ec298f;
+  border: 2px solid #ec298f;
   border-radius: 50%;
 }
-/* line 577, ../sass/main.scss */
+/* line 579, ../sass/main.scss */
 .payment .event-details .tix:hover, .ticket-details .event-details .tix:hover {
   cursor: pointer;
 }
-/* line 582, ../sass/main.scss */
+/* line 584, ../sass/main.scss */
 .payment .event-details .minus-tix, .ticket-details .event-details .minus-tix {
   padding: 3px 7px;
 }
-/* line 586, ../sass/main.scss */
+/* line 588, ../sass/main.scss */
 .payment .event-details .important-info, .ticket-details .event-details .important-info {
   font-size: 1.4rem;
   font-weight: 400;
 }
-/* line 589, ../sass/main.scss */
+/* line 591, ../sass/main.scss */
 .payment .event-details .important-info span, .ticket-details .event-details .important-info span {
   float: right;
 }
-/* line 595, ../sass/main.scss */
+/* line 597, ../sass/main.scss */
 .payment .key-facts, .ticket-details .key-facts {
   margin-bottom: 54px !important;
 }
 
-/* line 600, ../sass/main.scss */
+/* line 602, ../sass/main.scss */
 .add-card {
   height: 528px;
   position: relative;
 }
-/* line 603, ../sass/main.scss */
+/* line 605, ../sass/main.scss */
 .add-card h3 {
   margin: 0 1.5rem;
 }
-/* line 609, ../sass/main.scss */
+/* line 611, ../sass/main.scss */
 .add-card .empty, .add-card .completed {
   margin-top: 1rem;
   width: 320;
@@ -1117,16 +1119,16 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 620, ../sass/main.scss */
+/* line 622, ../sass/main.scss */
 .add-card .empty:hover, .add-card .completed:hover {
   cursor: pointer;
 }
-/* line 625, ../sass/main.scss */
+/* line 627, ../sass/main.scss */
 .add-card .completed {
   background-image: url("../img/entered-num.png");
 }
 
-/* line 633, ../sass/main.scss */
+/* line 635, ../sass/main.scss */
 .keypad {
   width: 100%;
   height: 238px;
@@ -1138,7 +1140,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: bottom;
 }
-/* line 643, ../sass/main.scss */
+/* line 645, ../sass/main.scss */
 .keypad:hover {
   cursor: pointer;
 }
@@ -1148,7 +1150,7 @@ html, body {
 								Confirmation
 
 ******************************************************************************/
-/* line 654, ../sass/main.scss */
+/* line 656, ../sass/main.scss */
 .confirmation {
   background-image: url("../img/confirmation-blur.png");
   color: #ebe8ee;
@@ -1157,11 +1159,11 @@ html, body {
   padding: 1.5rem;
   letter-spacing: 0.5px;
 }
-/* line 663, ../sass/main.scss */
+/* line 665, ../sass/main.scss */
 .confirmation .back-button {
   margin-top: 4rem;
   display: block;
-  width: 145px;
+  width: 45px;
   padding-left: 35px;
   height: 30px;
   background-image: url("../img/back-to-cat.png");
@@ -1169,24 +1171,25 @@ html, body {
   background-repeat: no-repeat;
   background-position: left;
 }
-/* line 673, ../sass/main.scss */
+/* line 675, ../sass/main.scss */
 .confirmation .back-button:hover {
   cursor: pointer;
 }
-/* line 677, ../sass/main.scss */
+/* line 679, ../sass/main.scss */
 .confirmation h3 {
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 1px;
 }
-/* line 683, ../sass/main.scss */
+/* line 685, ../sass/main.scss */
 .confirmation a {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 400;
   padding: 1rem 1.2rem;
-  border: 2px solid #ebe8ee;
-  color: #ebe8ee;
+  border: 2px solid #ec298f;
+  color: #ec298f;
+  background-color: white;
   margin-top: 1rem;
   display: inline-block;
   border-radius: 5px;
@@ -1197,19 +1200,19 @@ html, body {
 								Profile
 
 ******************************************************************************/
-/* line 703, ../sass/main.scss */
+/* line 706, ../sass/main.scss */
 .profile {
   background-image: none;
   background-color: #19093b;
   font-size: 0.9rem;
 }
-/* line 708, ../sass/main.scss */
+/* line 711, ../sass/main.scss */
 .profile .selected-bar1 {
   position: fixed;
   top: 100px;
   z-index: 100;
 }
-/* line 713, ../sass/main.scss */
+/* line 716, ../sass/main.scss */
 .profile .selected-bar1 h2 {
   text-align: center;
   text-transform: uppercase;
@@ -1220,7 +1223,7 @@ html, body {
   padding-top: 5px;
   margin-left: 110px;
 }
-/* line 723, ../sass/main.scss */
+/* line 726, ../sass/main.scss */
 .profile .selected-bar1 .back-to-cat, .profile .selected-bar1 .filter {
   display: inline-block;
   position: absolute;
@@ -1232,24 +1235,24 @@ html, body {
   background-size: contain;
   background-position: center;
 }
-/* line 734, ../sass/main.scss */
+/* line 737, ../sass/main.scss */
 .profile .selected-bar1 .filter {
   display: none;
   left: 304px;
   background-image: url("../img/filter.png");
 }
-/* line 742, ../sass/main.scss */
+/* line 745, ../sass/main.scss */
 .profile .bio, .profile .links {
   margin-top: 4rem;
   display: inline-block;
   width: 37%;
   vertical-align: top;
 }
-/* line 749, ../sass/main.scss */
+/* line 752, ../sass/main.scss */
 .profile .bio {
   margin-left: 2.5rem;
 }
-/* line 753, ../sass/main.scss */
+/* line 756, ../sass/main.scss */
 .profile .bio-pic {
   width: 100px;
   height: 100px;
@@ -1259,7 +1262,7 @@ html, body {
   background-size: contain;
   margin-bottom: 0.6rem;
 }
-/* line 763, ../sass/main.scss */
+/* line 766, ../sass/main.scss */
 .profile .name, .profile .location {
   text-align: center;
   margin-left: -1.2rem;
@@ -1267,13 +1270,13 @@ html, body {
   font-weight: 200;
   opacity: 0.92;
 }
-/* line 771, ../sass/main.scss */
+/* line 774, ../sass/main.scss */
 .profile .links {
   margin-top: 3.8rem;
   width: 42%;
   text-align: center;
 }
-/* line 775, ../sass/main.scss */
+/* line 778, ../sass/main.scss */
 .profile .links a {
   text-decoration: none;
   text-transform: uppercase;
@@ -1286,12 +1289,12 @@ html, body {
   border-radius: 6px;
   color: #ebe8ee;
 }
-/* line 789, ../sass/main.scss */
+/* line 792, ../sass/main.scss */
 .profile .circle {
   margin-left: 3.6rem;
   margin-top: 1.5rem;
 }
-/* line 792, ../sass/main.scss */
+/* line 795, ../sass/main.scss */
 .profile .circle div {
   display: inline-block;
   margin-right: 0.8rem;
@@ -1308,45 +1311,49 @@ html, body {
 								Tickets
 
 ******************************************************************************/
-/* line 816, ../sass/main.scss */
+/* line 819, ../sass/main.scss */
 .tickets .selected-bar h2 {
   margin-left: 100px !important;
 }
+/* line 822, ../sass/main.scss */
+.tickets .event {
+  height: 160px !important;
+}
 
-/* line 823, ../sass/main.scss */
+/* line 829, ../sass/main.scss */
 .bookmarks .bookmark {
   background-image: url("../img/bookmark-selected.png") !important;
 }
-/* line 826, ../sass/main.scss */
+/* line 832, ../sass/main.scss */
 .bookmarks .selected-bar h2 {
   margin-left: 95px !important;
 }
 
-/* line 833, ../sass/main.scss */
+/* line 839, ../sass/main.scss */
 .past .selected-bar h2 {
   margin-left: 90px !important;
 }
 
-/* line 840, ../sass/main.scss */
+/* line 846, ../sass/main.scss */
 .ticket-details .key-facts {
   margin-bottom: 0 !important;
 }
-/* line 844, ../sass/main.scss */
+/* line 850, ../sass/main.scss */
 .ticket-details .map {
   margin-bottom: 2rem;
 }
-/* line 848, ../sass/main.scss */
+/* line 854, ../sass/main.scss */
 .ticket-details .ticket-info span {
   font-size: 1.5rem;
 }
-/* line 851, ../sass/main.scss */
+/* line 857, ../sass/main.scss */
 .ticket-details .ticket-info p {
   font-size: 0.8rem;
   color: #777;
   font-weight: 200;
   margin: 0.4rem;
 }
-/* line 858, ../sass/main.scss */
+/* line 864, ../sass/main.scss */
 .ticket-details .barcode, .ticket-details .qrcode {
   height: 100px;
   width: 100%;
@@ -1356,13 +1363,13 @@ html, body {
   background-position: center;
   margin-bottom: 0.2rem;
 }
-/* line 868, ../sass/main.scss */
+/* line 874, ../sass/main.scss */
 .ticket-details .qrcode {
   margin-bottom: 0;
   height: 145px;
   background-image: url("../img/qr.png");
 }
-/* line 875, ../sass/main.scss */
+/* line 881, ../sass/main.scss */
 .ticket-details .share-this {
   margin-bottom: 3rem;
   color: #ec298f;
@@ -1373,7 +1380,7 @@ html, body {
 								Filter
 
 ******************************************************************************/
-/* line 888, ../sass/main.scss */
+/* line 894, ../sass/main.scss */
 .filtered {
   z-index: 1000;
   position: fixed;
@@ -1385,19 +1392,19 @@ html, body {
   color: #a8bab8;
   padding: 1.5rem;
 }
-/* line 898, ../sass/main.scss */
+/* line 904, ../sass/main.scss */
 .filtered section {
   font-size: 0.7rem;
   font-weight: 300;
 }
-/* line 901, ../sass/main.scss */
+/* line 907, ../sass/main.scss */
 .filtered section h3 {
   font-weight: 300;
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: #ebe8ee;
 }
-/* line 907, ../sass/main.scss */
+/* line 913, ../sass/main.scss */
 .filtered section div {
   width: 100%;
   padding: 8px 0;
@@ -1407,23 +1414,23 @@ html, body {
   margin-left: -4px;
   cursor: pointer;
 }
-/* line 916, ../sass/main.scss */
+/* line 922, ../sass/main.scss */
 .filtered section div.selected {
   background-color: rgba(241, 144, 32, 0.8);
   color: white;
 }
-/* line 923, ../sass/main.scss */
+/* line 929, ../sass/main.scss */
 .filtered .price div {
   display: inline-block;
   width: 33%;
   text-align: center;
   padding: 8px 2px;
 }
-/* line 930, ../sass/main.scss */
+/* line 936, ../sass/main.scss */
 .filtered .filter-button {
   width: 100%;
   margin-left: -4px;
-  background-color: #d91e18;
+  background-color: #ec298f;
   display: inline-block;
   color: White;
   font-weight: 400;
